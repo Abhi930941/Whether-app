@@ -1,0 +1,427 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Weather App - Real-time Weather Information</title>
+    
+    <!-- Bootstrap CSS -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.0/css/bootstrap.min.css" rel="stylesheet">
+    
+    <!-- Font Awesome -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
+    
+    <!-- Leaflet CSS -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.9.4/leaflet.css">
+    
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <!-- Enhanced Navigation -->
+    <nav class="navbar navbar-expand-lg navbar-dark fixed-top">
+        <div class="container">
+            <a class="navbar-brand fw-bold" href="#home">
+                <div class="brand-container">
+                    <div class="brand-icon">
+                        <i class="fas fa-cloud-sun"></i>
+                    </div>
+                    <span class="brand-text">WeatherApp</span>
+                </div>
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item">
+                        <a class="nav-link" href="#home"><i class="fas fa-home me-1"></i>Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#features"><i class="fas fa-star me-1"></i>Features</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#search"><i class="fas fa-search me-1"></i>Find Weather</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#about"><i class="fas fa-info-circle me-1"></i>About</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section id="home" class="hero-section">
+        <div class="hero-particles"></div>
+        <div class="container">
+            <div class="row align-items-center min-vh-100">
+                <div class="col-lg-6">
+                    <div class="hero-content">
+                        <h1 class="hero-title">
+                            Get Real-time Weather Information
+                        </h1>
+                        <p class="hero-subtitle">
+                            Discover accurate weather conditions for any city worldwide with our modern and intuitive weather application. Get detailed forecasts, interactive maps, and comprehensive weather data.
+                        </p>
+                        <div class="hero-buttons">
+                            <a href="#search" class="btn btn-primary btn-lg me-3">
+                                <i class="fas fa-search me-2"></i>Find Weather Now
+                            </a>
+                            <a href="#features" class="btn btn-outline-light btn-lg">
+                                <i class="fas fa-play me-2"></i>Learn More
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-6">
+                    <div class="hero-image">
+                        <div class="weather-card-preview">
+                            <div class="weather-animation">
+                                <i class="fas fa-sun weather-icon"></i>
+                                <div class="weather-particles">
+                                    <div class="particle"></div>
+                                    <div class="particle"></div>
+                                    <div class="particle"></div>
+                                </div>
+                            </div>
+                            <div class="temp">25°C</div>
+                            <div class="condition">Sunny</div>
+                            <div class="location">Mumbai, India</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="scroll-indicator">
+            <a href="#features" class="scroll-down">
+                <i class="fas fa-chevron-down"></i>
+            </a>
+        </div>
+    </section>
+
+    <!-- Features Section -->
+    <section id="features" class="features-section py-5">
+        <div class="container">
+            <div class="text-center mb-5">
+                <h2 class="section-title">Amazing Features</h2>
+                <p class="section-subtitle">Everything you need to stay informed about the weather</p>
+            </div>
+            <div class="row g-4">
+                <div class="col-md-4">
+                    <div class="feature-card">
+                        <div class="feature-icon">
+                            <i class="fas fa-thermometer-half"></i>
+                        </div>
+                        <h4>Real-time Temperature</h4>
+                        <p>Get accurate temperature readings updated in real-time for any location worldwide with precise data.</p>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="feature-card">
+                        <div class="feature-icon">
+                            <i class="fas fa-map-marked-alt"></i>
+                        </div>
+                        <h4>Interactive Maps</h4>
+                        <p>View weather locations on interactive maps with detailed geographical information and weather stations.</p>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="feature-card">
+                        <div class="feature-icon">
+                            <i class="fas fa-mobile-alt"></i>
+                        </div>
+                        <h4>Responsive Design</h4>
+                        <p>Perfect experience on all devices - desktop, tablet, and mobile phones with optimized layouts.</p>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="feature-card">
+                        <div class="feature-icon">
+                            <i class="fas fa-wind"></i>
+                        </div>
+                        <h4>Wind Information</h4>
+                        <p>Complete wind data including speed, direction, and gust information for better weather understanding.</p>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="feature-card">
+                        <div class="feature-icon">
+                            <i class="fas fa-eye"></i>
+                        </div>
+                        <h4>Visibility Data</h4>
+                        <p>Get visibility conditions and atmospheric pressure readings for comprehensive weather analysis.</p>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="feature-card">
+                        <div class="feature-icon">
+                            <i class="fas fa-tint"></i>
+                        </div>
+                        <h4>Humidity Levels</h4>
+                        <p>Monitor humidity levels and feel-like temperature for better planning and comfort assessment.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Search Section -->
+    <section id="search" class="search-section py-5">
+        <div class="container">
+            <div class="text-center mb-5">
+                <h2 class="section-title">Find Weather Information</h2>
+                <p class="section-subtitle">Enter any city name to get current weather conditions</p>
+            </div>
+            
+            <!-- Search Form -->
+            <div class="row justify-content-center mb-5">
+                <div class="col-md-8">
+                    <div class="search-form">
+                        <div class="input-group">
+                            <input type="text" id="cityInput" class="form-control" placeholder="Enter city name (e.g., Mumbai, Delhi, Patna)...">
+                            <button class="btn btn-primary" type="button" id="searchBtn">
+                                <i class="fas fa-search"></i> Search
+                            </button>
+                        </div>
+                        <div id="loading" class="loading-spinner" style="display: none;">
+                            <div class="spinner-border text-primary" role="status">
+                                <span class="visually-hidden">Loading...</span>
+                            </div>
+                            <p class="mt-2">Fetching weather data...</p>
+                        </div>
+                        <div class="popular-cities mt-3">
+                            <p class="mb-2"><small class="text-muted">Popular searches:</small></p>
+                            <div class="city-tags">
+                                <span class="city-tag" data-city="Mumbai">Mumbai</span>
+                                <span class="city-tag" data-city="Delhi">Delhi</span>
+                                <span class="city-tag" data-city="Bangalore">Bangalore</span>
+                                <span class="city-tag" data-city="Chennai">Chennai</span>
+                                <span class="city-tag" data-city="Kolkata">Kolkata</span>
+                                <span class="city-tag" data-city="Pune">Pune</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Weather Results -->
+            <div id="weatherResults" style="display: none;">
+                <div class="row g-4">
+                    <!-- Main Weather Card -->
+                    <div class="col-lg-6">
+                        <div class="weather-main-card">
+                            <div class="weather-header">
+                                <h3 id="cityName">City Name</h3>
+                                <p id="currentDate">Date</p>
+                            </div>
+                            <div class="weather-main">
+                                <div class="weather-icon-large">
+                                    <i id="weatherIcon" class="fas fa-sun"></i>
+                                </div>
+                                <div class="weather-temp">
+                                    <span id="temperature">--</span>°C
+                                </div>
+                                <div class="weather-condition">
+                                    <span id="weatherCondition">--</span>
+                                </div>
+                                <div class="weather-location">
+                                    <i class="fas fa-map-marker-alt"></i>
+                                    <span id="weatherLocation">--</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Weather Details -->
+                    <div class="col-lg-6">
+                        <div class="weather-details-card">
+                            <h4><i class="fas fa-info-circle me-2"></i>Weather Details</h4>
+                            <div class="weather-details-grid">
+                                <div class="detail-item">
+                                    <i class="fas fa-thermometer-three-quarters"></i>
+                                    <div>
+                                        <span class="detail-label">Feels Like</span>
+                                        <span class="detail-value" id="feelsLike">--°C</span>
+                                    </div>
+                                </div>
+                                <div class="detail-item">
+                                    <i class="fas fa-tint"></i>
+                                    <div>
+                                        <span class="detail-label">Humidity</span>
+                                        <span class="detail-value" id="humidity">--%</span>
+                                    </div>
+                                </div>
+                                <div class="detail-item">
+                                    <i class="fas fa-wind"></i>
+                                    <div>
+                                        <span class="detail-label">Wind Speed</span>
+                                        <span class="detail-value" id="windSpeed">-- km/h</span>
+                                    </div>
+                                </div>
+                                <div class="detail-item">
+                                    <i class="fas fa-compass"></i>
+                                    <div>
+                                        <span class="detail-label">Wind Direction</span>
+                                        <span class="detail-value" id="windDirection">--</span>
+                                    </div>
+                                </div>
+                                <div class="detail-item">
+                                    <i class="fas fa-compress-arrows-alt"></i>
+                                    <div>
+                                        <span class="detail-label">Pressure</span>
+                                        <span class="detail-value" id="pressure">-- hPa</span>
+                                    </div>
+                                </div>
+                                <div class="detail-item">
+                                    <i class="fas fa-eye"></i>
+                                    <div>
+                                        <span class="detail-label">Visibility</span>
+                                        <span class="detail-value" id="visibility">-- km</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Map Section -->
+                <div class="row mt-4">
+                    <div class="col-12">
+                        <div class="map-card">
+                            <h4><i class="fas fa-map-marker-alt me-2"></i>Location Map</h4>
+                            <div id="map"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Error Message -->
+            <div id="errorMessage" class="alert alert-danger" style="display: none;">
+                <i class="fas fa-exclamation-triangle me-2"></i>
+                <span id="errorText">City not found. Please try again.</span>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="about-section py-5">
+        <div class="container">
+            <div class="row align-items-center">
+                <div class="col-lg-6">
+                    <h2 class="section-title">Why Choose Our Weather App?</h2>
+                    <p class="section-subtitle mb-4">We provide the most accurate and comprehensive weather information with a beautiful, user-friendly interface.</p>
+                    <div class="about-features">
+                        <div class="about-feature">
+                            <i class="fas fa-check-circle text-success"></i>
+                            <span>Real-time weather updates</span>
+                        </div>
+                        <div class="about-feature">
+                            <i class="fas fa-check-circle text-success"></i>
+                            <span>Global coverage for all cities</span>
+                        </div>
+                        <div class="about-feature">
+                            <i class="fas fa-check-circle text-success"></i>
+                            <span>Interactive mapping technology</span>
+                        </div>
+                        <div class="about-feature">
+                            <i class="fas fa-check-circle text-success"></i>
+                            <span>Mobile-responsive design</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-6">
+                    <div class="about-image">
+                        <div class="weather-stats">
+                            <div class="stat-item">
+                                <h3>500K+</h3>
+                                <p>Cities Covered</p>
+                            </div>
+                            <div class="stat-item">
+                                <h3>99.9%</h3>
+                                <p>Accuracy Rate</p>
+                            </div>
+                            <div class="stat-item">
+                                <h3>24/7</h3>
+                                <p>Real-time Updates</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Enhanced Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-4 col-md-6 mb-4">
+                    <div class="footer-brand">
+                        <div class="footer-brand-container">
+                            <div class="footer-brand-icon">
+                                <i class="fas fa-cloud-sun"></i>
+                            </div>
+                            <span class="footer-brand-text">WeatherApp</span>
+                        </div>
+                        <p>Advanced weather application providing real-time weather information with beautiful interface and comprehensive data.</p>
+                        <div class="social-links">
+                            <a href="https://www.facebook.com/share/1A39yLUvhp/" class="social-link">
+                                <i class="fab fa-facebook-f"></i>
+                            </a>
+                           
+                            <a href="https://www.instagram.com/sahaniabhisek311?igsh=MW1nNmE1MGpkdnY3ZA==" class="social-link">
+                                <i class="fab fa-instagram"></i>
+                            </a>
+                            <a href="https://www.linkedin.com/in/abhishek-sahani-447851341" class="social-link">
+                                <i class="fab fa-linkedin-in"></i>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-2 col-md-3 mb-4">
+                    <h6>Quick Links</h6>
+                    <ul class="footer-links">
+                        <li><a href="#home">Home</a></li>
+                        <li><a href="#features">Features</a></li>
+                        <li><a href="#search">Weather Search</a></li>
+                        <li><a href="#about">About Us</a></li>
+                    </ul>
+                </div>
+                <div class="col-lg-3 col-md-3 mb-4">
+                    <h6>Weather Features</h6>
+                    <ul class="footer-links">
+                        <li><a href="#search">Current Weather</a></li>
+                        <li><a href="#search">Temperature Data</a></li>
+                        <li><a href="#search">Wind Information</a></li>
+                        <li><a href="#search">Interactive Maps</a></li>
+                    </ul>
+                </div>
+                <div class="col-lg-3 col-md-12 mb-4">
+                    <h6>Contact Info</h6>
+                    <div class="contact-info">
+                        <p><i class="fas fa-envelope footicon"></i> abhisheksahani242443@gmail.com</p>
+                    
+                        <p><i class="fas fa-map-marker-alt footicon"></i> Mumbai, India</p>
+                    </div>
+                </div>
+            </div>
+            <hr class="footer-divider">
+            <div class="text-center">
+                <p class="footer-copyright">
+                    &copy; WeatherApp. All rights reserved. Built by Sahani Abhishek with <i class="fas fa-heart text-danger"></i> for weather enthusiasts.
+                </p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Bootstrap JS -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.0/js/bootstrap.bundle.min.js"></script>
+    
+    <!-- Leaflet JS -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.9.4/leaflet.js"></script>
+    
+    <!-- Custom JavaScript -->
+    <script src="script.js"></script>
+</body>
+</html>
