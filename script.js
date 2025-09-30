@@ -2,7 +2,7 @@
 
 class WeatherApp {
     constructor() {
-        this.apiKey = 'YOUR_OPENWEATHERMAP_API_KEY';
+        this.apiKey = '265648065b069f2214bd644a6d0fb8e1';
         this.apiUrl = 'https://api.openweathermap.org/data/2.5';
         this.geocodingUrl = 'https://api.openweathermap.org/geo/1.0';
         
