@@ -1,5 +1,3 @@
-// Complete Working Weather App - All Errors Fixed
-
 class WeatherApp {
     constructor() {
         this.apiKey = 'YOUR_OPENWEATHERMAP_API_KEY';
@@ -215,7 +213,7 @@ class WeatherApp {
             'pune': { lat: 18.5204, lon: 73.8567, state: 'Maharashtra', region: 'Western India' },
             'ahmedabad': { lat: 23.0225, lon: 72.5714, state: 'Gujarat', region: 'Western India' },
             
-            // Maharashtra Cities - Complete List
+            // Maharashtra Cities 
             'bhiwandi': { lat: 19.3000, lon: 73.0630, state: 'Maharashtra', region: 'Western India' },
             'kalyan': { lat: 19.2403, lon: 73.1305, state: 'Maharashtra', region: 'Western India' },
             'dombivli': { lat: 19.2172, lon: 73.0860, state: 'Maharashtra', region: 'Western India' },
@@ -243,7 +241,7 @@ class WeatherApp {
             'thane': { lat: 19.2183, lon: 72.9781, state: 'Maharashtra', region: 'Western India' },
             'navi mumbai': { lat: 19.0330, lon: 73.0297, state: 'Maharashtra', region: 'Western India' },
             
-            // Bihar Cities - ALL Districts
+            // Bihar Cities 
             'patna': { lat: 25.5941, lon: 85.1376, state: 'Bihar', region: 'Eastern India' },
             'gaya': { lat: 24.7914, lon: 85.0002, state: 'Bihar', region: 'Eastern India' },
             'bhagalpur': { lat: 25.2425, lon: 86.9842, state: 'Bihar', region: 'Eastern India' },
@@ -279,7 +277,7 @@ class WeatherApp {
             'kishanganj': { lat: 26.1124, lon: 87.9467, state: 'Bihar', region: 'Eastern India' },
             'araria': { lat: 26.1479, lon: 87.5071, state: 'Bihar', region: 'Eastern India' },
             
-            // Uttar Pradesh Cities - ALL Districts
+            // Uttar Pradesh Cities 
             'lucknow': { lat: 26.8467, lon: 80.9462, state: 'Uttar Pradesh', region: 'Northern India' },
             'kanpur': { lat: 26.4499, lon: 80.3319, state: 'Uttar Pradesh', region: 'Northern India' },
             'agra': { lat: 27.1767, lon: 78.0081, state: 'Uttar Pradesh', region: 'Northern India' },
@@ -950,7 +948,7 @@ class WeatherApp {
                 </div>
             `;
             
-            // Add click handlers to suggestion tags
+            // click handlers to suggestion tags
             errorDiv.querySelectorAll('.suggestion-tag').forEach(tag => {
                 tag.addEventListener('click', () => {
                     const city = tag.dataset.city;
@@ -982,7 +980,7 @@ document.addEventListener('DOMContentLoaded', function() {
     }
 });
 
-// Enhanced interactive features
+// interactive features
 function addInteractiveFeatures() {
     try {
         const featureCards = document.querySelectorAll('.feature-card');
@@ -1020,7 +1018,7 @@ function addInteractiveFeatures() {
     }
 }
 
-// Add essential CSS for animations and styling
+// essential CSS for animations and styling
 function addEssentialCSS() {
     const style = document.createElement('style');
     style.textContent = `
@@ -1320,3 +1318,22 @@ document.addEventListener('DOMContentLoaded', function() {
 
 console.log('Weather App Script v3.0.0 - Complete & Error-Free');
 console.log('Ready to search 1000+ Indian cities including Bhiwandi, Bihar cities, UP cities!');
+
+// Scroll To Top Button 
+
+const scrollTopBtn = document.getElementById("scrollTopBtn");
+
+window.addEventListener("scroll", () => {
+    if (window.scrollY > 250) {
+        scrollTopBtn.style.display = "block";
+    } else {
+        scrollTopBtn.style.display = "none";
+    }
+});
+
+scrollTopBtn.addEventListener("click", () => {
+    window.scrollTo({
+        top: 0,
+        behavior: "smooth"
+    });
+});

@@ -18,7 +18,7 @@
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-    <!-- Enhanced Navigation -->
+    <!-- Navigation -->
     <nav class="navbar navbar-expand-lg navbar-dark fixed-top">
         <div class="container">
             <a class="navbar-brand fw-bold" href="#home">
@@ -67,10 +67,7 @@
                         <div class="hero-buttons">
                             <a href="#search" class="btn btn-primary btn-lg me-3">
                                 <i class="fas fa-search me-2"></i>Find Weather Now
-                            </a>
-                            <a href="#features" class="btn btn-outline-light btn-lg">
-                                <i class="fas fa-play me-2"></i>Learn More
-                            </a>
+                            </a>                       
                         </div>
                     </div>
                 </div>
@@ -208,7 +205,7 @@
             <!-- Weather Results -->
             <div id="weatherResults" style="display: none;">
                 <div class="row g-4">
-                    <!-- Main Weather Card -->
+                    <!--Weather Card -->
                     <div class="col-lg-6">
                         <div class="weather-main-card">
                             <div class="weather-header">
@@ -351,8 +348,13 @@
             </div>
         </div>
     </section>
+    
+    <!-- Scroll To Top Button -->
+    <button id="scrollTopBtn" aria-label="Scroll to top">
+        <i class="fas fa-arrow-up"></i>
+    </button>
 
-    <!-- Enhanced Footer -->
+    <!--Footer -->
     <footer class="footer">
         <div class="container">
             <div class="row">
@@ -365,18 +367,7 @@
                             <span class="footer-brand-text">WeatherApp</span>
                         </div>
                         <p>Advanced weather application providing real-time weather information with beautiful interface and comprehensive data.</p>
-                        <div class="social-links">
-                            <a href="https://www.facebook.com/share/1A39yLUvhp/" class="social-link">
-                                <i class="fab fa-facebook-f"></i>
-                            </a>
-                           
-                            <a href="https://www.instagram.com/sahaniabhisek311?igsh=MW1nNmE1MGpkdnY3ZA==" class="social-link">
-                                <i class="fab fa-instagram"></i>
-                            </a>
-                            <a href="https://www.linkedin.com/in/abhishek-sahani-447851341" class="social-link">
-                                <i class="fab fa-linkedin-in"></i>
-                            </a>
-                        </div>
+                        
                     </div>
                 </div>
                 <div class="col-lg-2 col-md-3 mb-4">
@@ -400,9 +391,14 @@
                 <div class="col-lg-3 col-md-12 mb-4">
                     <h6>Contact Info</h6>
                     <div class="contact-info">
-                        <p><i class="fas fa-envelope footicon"></i> abhishek242443@gmail.com</p>
-                    
-                        <p><i class="fas fa-map-marker-alt footicon"></i> Mumbai, India</p>
+                        <div class="social-links">
+                            <a href="mailto:abhishek242443@gmail.com" class="social-link">
+                                <i class="fas fa-envelope"></i>
+                            </a>
+                            <a href="https://www.linkedin.com/in/abhishek-sahani-447851341" class="social-link">
+                                <i class="fab fa-linkedin-in"></i>
+                            </a>
+                        </div>
                     </div>
                 </div>
             </div>

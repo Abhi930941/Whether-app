@@ -1,6 +1,3 @@
-/* Enhanced styles.css for Weather App */
-
-/* Custom Properties */
 :root {
     --primary-gradient: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
     --secondary-gradient: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);
@@ -32,7 +29,7 @@ html {
     scroll-behavior: smooth;
 }
 
-/* Enhanced Navigation */
+/* Navigation */
 .navbar {
     background: rgba(44, 62, 80, 0.95) !important;
     backdrop-filter: blur(15px);
@@ -101,7 +98,7 @@ html {
     width: 80%;
 }
 
-/* Enhanced Hero Section */
+/* Hero Section */
 .hero-section {
     background: linear-gradient(135deg, #667eea 0%, #764ba2 50%, #667eea 100%);
     color: white;
@@ -187,7 +184,17 @@ html {
     transform: translateY(-3px);
 }
 
-/* Enhanced Weather Card Preview */
+.hero-section {
+    padding-top: 10px;   
+}
+
+@media (max-width: 768px) {
+    .hero-section {
+        padding-top: 120px;  
+    }
+}
+
+/*  Weather Card Preview */
 .weather-card-preview {
     background: rgba(255, 255, 255, 0.15);
     backdrop-filter: blur(20px);
@@ -358,7 +365,7 @@ html {
     line-height: 1.7;
 }
 
-/* Enhanced Feature Cards */
+/* Feature Cards */
 .feature-card {
     background: white;
     padding: 3rem 2.5rem;
@@ -425,7 +432,7 @@ html {
     z-index: 2;
 }
 
-/* Enhanced Search Form */
+/*  Search Form */
 .search-form {
     position: relative;
     max-width: 600px;
@@ -506,7 +513,7 @@ html {
     font-weight: 600;
 }
 
-/* Enhanced Weather Cards */
+/*  Weather Cards */
 .weather-main-card, .weather-details-card, .map-card {
     background: white;
     border-radius: 25px;
@@ -660,7 +667,7 @@ html {
     color: var(--text-dark);
 }
 
-/* Enhanced Map Styling */
+/* Map Styling */
 .map-card {
     position: relative;
     min-height: 550px;
@@ -791,7 +798,41 @@ html {
     box-shadow: 0 8px 25px rgba(255, 107, 107, 0.3);
 }
 
-/* Enhanced Footer */
+/* Scroll To Top Button  */
+#scrollTopBtn {
+    position: fixed;
+    bottom: 25px;
+    right: 25px;
+    width: 48px;
+    height: 48px;
+    border-radius: 50%;
+    border: none;
+    background: #7441c7;   
+    color: #fff;
+    font-size: 20px;
+    cursor: pointer;
+    display: none;
+    z-index: 999;
+    box-shadow: 0 6px 18px rgba(0, 0, 0, 0.3);
+    transition: all 0.3s ease;
+}
+
+#scrollTopBtn:hover {
+    transform: translateY(-5px);
+    background: #0284c7;
+}
+
+@media (max-width: 768px) {
+    #scrollTopBtn {
+        width: 42px;
+        height: 42px;
+        font-size: 18px;
+        bottom: 20px;
+        right: 20px;
+    }
+}
+
+/* Footer */
 .footer {
     background: var(--dark-gradient);
     color: white;
@@ -957,7 +998,45 @@ html {
     margin: 0 0.25rem;
 }
 
-/* Enhanced Buttons */
+.footer-brand-container {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.footer-links li {
+    margin-bottom: 6px;
+}
+
+.contact-icons {
+    margin-top: 8px;
+    display: flex;
+    gap: 12px;
+}
+
+.contact-icons i {
+    font-size: 18px;
+}
+
+@media (max-width: 768px) {
+    .footer {
+        text-align: center;
+    }
+
+    .footer-brand-container {
+        justify-content: center;
+    }
+
+    .social-links,
+    .contact-icons {
+        justify-content: center;
+    }
+
+    .contact-info p {
+        justify-content: center;
+    }
+}
+
 .btn-primary {
     background: var(--primary-gradient);
     border: none;
@@ -995,7 +1074,6 @@ html {
     animation: fadeInUp 0.8s ease-out forwards;
 }
 
-/* Responsive Design */
 @media (max-width: 992px) {
     .hero-title {
         font-size: 3rem;
@@ -1124,7 +1202,6 @@ html {
     }
 }
 
-/* Dark theme support */
 @media (prefers-color-scheme: dark) {
     .navbar {
         background: rgba(33, 37, 41, 0.98) !important;
